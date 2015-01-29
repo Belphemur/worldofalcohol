@@ -115,7 +115,7 @@ function drawCitiesMap() {
 
 <div class="column-group half-gutters">
 	<div class="xlarge-15 large-15 medium-20 small-100"> 
-		<a href="submit.php?country={$country_infos.country_code}" class="ink-button xlarge-90 large-90 medium-90 small-100 green">Share local alcohol </a>
+		<a href="submit.php?country={$country_infos.country_code}" class="ink-button xlarge-100 large-100 medium-100 small-100 green">Share local alcohol</a>
 			<nav class="ink-navigation half-top-space">
 				<ul class="menu vertical black">
 				<li class="heading active"><a href="#">Alcohol Types</a></li>
