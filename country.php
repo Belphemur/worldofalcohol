@@ -68,7 +68,8 @@ $smarty->caching = true;
 $smarty->cache_lifetime = 1800;
 
 $meta = array();
-$meta['title']	=	"".$country_infos['country']." Alcohols: Discover the best alcohols (".$country_infos['national_alcohols'].") from ".$country_infos['country']."";
+$national_alcohol = ($country_infos['national_alcohols']=="None") ? "" : "(".$country_infos['national_alcohols'].")";
+$meta['title']	=	"".$country_infos['country']." Alcohols: Discover the best alcohols ".$national_alcohol." from ".$country_infos['country']."";
 $meta['description'] = "Discover and share local ".implode(", ",$alc_types_str)." from ".$country_infos['country']."";
 $meta['keywords'] = "".$country_infos['country']." alcohols, alcohol ".$country_infos['country'].", ".implode(" ".$country_infos['country'].", ",$alc_types_str)." ".$country_infos['country'].", World of alcohols, rate local alcohols, rate local beers, rate local wines, rate local whiskys";
 $meta['robots'] = "index,follow,all";

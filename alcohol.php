@@ -97,7 +97,7 @@ $smarty->cache_lifetime = 1800;
 
 $meta = array();
 $meta['title']	=	"".$alcohol['name']." - ".$alcohol['type']." ".$alcohol['sub_type']." from ".$alcohol['city'].", ".$alcohol['country']."";
-$meta['description'] = "Discover and share more ".implode(", ",$alc_types_str)." from ".$alcohol['country']."";
+$meta['description'] = "".$alcohol['name'].", a ".$alcohol['sub_type']." ".$alcohol['type']." ".$alcohol['degree']."% ABV from ".$alcohol['country'].". Discover and share more ".implode(", ",$alc_types_str)." from ".$alcohol['country']."";
 $meta['keywords'] = "".$alcohol['name'].", ".$alcohol['name']." ".$alcohol['company_name'].", ".$alcohol['country']." ".$alcohol['type'].", ".$alcohol['country']." ".$alcohol['sub_type']." ".$alcohol['type'].", ".$alcohol['name']." ".$alcohol['degree']." ABV,  World of alcohols, rate local alcohols, rate local beers, rate local wines, rate local whiskys";
 $meta['robots'] = "index,follow,all";
 $smarty->assign("meta", $meta);
