@@ -3,8 +3,8 @@
 <header class="top-margin-5 hide-all show-large show-xlarge">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">World</a></li>
-	<li><a href="{$site_link}/{$alcohol.country_code}-alcohols">{$alcohol.country}</a></li>
+	<li><a href="index.php">World</a></li>
+	<li><a href="{$alcohol.country_code}-alcohols">{$alcohol.country}</a></li>
 	{* <li><a href="{$site_link}">{$alcohol.type}</a></li> *}
 	<li class="active"><a href="#"><b>{$alcohol.name}</b></a></li>
 	</ul>
@@ -13,8 +13,8 @@
 <header class="top-margin-gap hide-all show-medium show-small show-tiny">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">Home</a></li>
-	<li><a href="{$site_link}/{$alcohol.country_code}-alcohols">{$alcohol.country}</a></li>
+	<li><a href="index.php">Home</a></li>
+	<li><a href="{$alcohol.country_code}-alcohols">{$alcohol.country}</a></li>
 	{* <li><a href="{$site_link}">{$alcohol.type}</a></li> *}
 	<li class="active"><a href="#"><b>{$alcohol.name}</b></a></li>
 	</ul>

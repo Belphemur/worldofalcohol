@@ -3,7 +3,7 @@
 <header class="top-margin-5 hide-all show-large show-xlarge">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">World</a></li>
+	<li><a href="index.php">World</a></li>
 	<li class="active"><a href="#"><b>{$country_infos.country}</b></a></li>
 	</ul>
 	</nav>
@@ -11,7 +11,7 @@
 <header class="top-margin-gap hide-all show-medium show-small show-tiny">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">World</a></li>
+	<li><a href="index.php">World</a></li>
 	<li class="active"><a href="#"><b>{$country_infos.country}</b></a></li>
 	</ul>
 	</nav>

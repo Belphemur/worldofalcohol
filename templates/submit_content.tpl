@@ -4,7 +4,7 @@
 <header class="top-margin-5 hide-all show-large show-xlarge">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">World</a></li>
+	<li><a href="index.php">World</a></li>
 	<li class="active"><a href="#"><b>Submit alcohol</b></a></li>
 	</ul>
 	</nav>
@@ -12,59 +12,14 @@
 <header class="top-margin-gap hide-all show-medium show-small show-tiny">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
-	<li><a href="{$site_link}/index.php">World</a></li>
+	<li><a href="index.php">World</a></li>
 	<li class="active"><a href="#"><b>Submit alcohol</b></a></li>
 	</ul>
 	</nav>
 </header>
 <script type="text/javascript">
-/*$('#i_submit').click( function() {
-    //check whether browser fully supports all File API
-    if (window.File && window.FileReader && window.FileList && window.Blob)
-    {
-        //get the file size and file type from file input field
-        var fsize = $('#i_file')[0].files[0].size;
-        var ftype = $('#i_file')[0].files[0].type;
-        var fname = $('#i_file')[0].files[0].name;
-        
-        if(fsize>1048576) //do something if file size more than 1 mb (1048576)
-        {
-            alert("Type :"+ ftype +" | "+ fsize +" bites\n(File: "+fname+") Too big!");
-        }else{
-            alert("Type :"+ ftype +" | "+ fsize +" bites\n(File :"+fname+") You are good to go!");
-        }
-    }else{
-        alert("Please upgrade your browser, because your current browser lacks some new features we need!");
-    }
-});
 
-$('#i_submit').click( function() {
-    //check whether browser fully supports all File API
-    if (window.File && window.FileReader && window.FileList && window.Blob)
-    {
-        //get the file size and file type from file input field
-        var fsize = $('#i_file')[0].files[0].size;
-        var ftype = $('#i_file')[0].files[0].type;
-        var fname = $('#i_file')[0].files[0].name;
-        
-       switch(ftype)
-        {
-            case 'image/png':
-            case 'image/gif':
-            case 'image/jpeg':
-            case 'image/pjpeg':
-                alert("Acceptable image file!");
-                break;
-            default:
-                alert('Unsupported File!');
-        }
-
-    }else{
-        alert("Please upgrade your browser, because your current browser lacks some new features we need!");
-    }
-});*/
-
-function readURL(input) {
+    function readURL(input) {
 	//check whether browser fully supports all File API
     if (window.File && window.FileReader && window.FileList && window.Blob)
     {
