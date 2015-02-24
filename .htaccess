@@ -1,0 +1,9 @@
+Options +FollowSymLinks -MultiViews
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule ^([a-z-]*)-alcohols$ country.php?country=$1 [NC,L]
+RewriteRule ^(.*)_([a-z-]+)-(absinthe|aguardiente|akvavit|aperitif|arak|arrack|basi|becherovka|beer|brandy|brannvin|cachaca|calvados|cava|champagne|cider|cognac|fenny|fernet|gin|grappa|guaro|jenever|kaoliang|krambambula|limoncello|liquor|mead|mezcal|moutai|oghi|ouzo|pastis|pisco|poitin|port-wine|pulque|raki|rakia|rice-wine|rum|sake|schnapps|sherry|shochu|singani|slivovitz|soju|sparkling-wine|tej|tequila|triple-sec|vermouth|vodka|whisky|wine|zivania)$ alcohol.php?name=$1 [NC,L]
