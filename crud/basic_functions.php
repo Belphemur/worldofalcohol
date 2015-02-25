@@ -30,7 +30,7 @@ function copy_file($url, $dirname, $new_name)
 		// IF ERROR during upload uncomment the following line
 		//$ext = ".".pathinfo($url, PATHINFO_EXTENSION);
 		
-		if(strstr($dirname, 'images') || strstr($dirname, 'thumbnails') || strstr($dirname, 'mini') || strstr($dirname, 'fond_ecran_hd'))
+		if(strstr($dirname, 'images') || strstr($dirname, 'places') || strstr($dirname, 'places_mini') || strstr($dirname, 'thumbnails') || strstr($dirname, 'mini'))
 		{
 			if($ext!='.jpeg' && $ext!='.jpg' && $ext!='.gif' && $ext!='.png'){
 				$json_response["result"] = "ERROR";

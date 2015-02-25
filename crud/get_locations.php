@@ -8,13 +8,13 @@
 
 	
 			if(isset($_GET['id'])) {
-				$result = $sql->query("SELECT * FROM location WHERE id = '".$_GET['id']."';");
+				$result = $sql->query("SELECT * FROM location WHERE id = '".$_GET['id']."' ORDER BY country ASC;");
 			}
 			else if(isset($_GET['country']) && isset($_GET['city'])) {
-				$result = $sql->query("SELECT * FROM location WHERE country_code_crc = '".u_crc32(format_name(trim($_GET['country'])))."' AND country_code = '".format_name(trim($_GET['country']))."' AND city_code = '".format_name(trim($_GET['city']))."' ;");
+				$result = $sql->query("SELECT * FROM location WHERE country_code_crc = '".u_crc32(format_name(trim($_GET['country'])))."' AND country_code = '".format_name(trim($_GET['country']))."' AND city_code = '".format_name(trim($_GET['city']))."' ORDER BY country ASC;");
 			}
 			else {
-				$result = $sql->query("SELECT * FROM location;");
+				$result = $sql->query("SELECT * FROM location ORDER BY country ASC;");
 			}
 	
 	$rows = $sql->getResults();

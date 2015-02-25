@@ -1,12 +1,13 @@
 <?php
 require_once "basic_functions.php";
 require('libs/wideimage/WideImage.php');
-//TODO CHANGE IMAGES FOLDER
+
 
 $jsonResponse = array();
 if(isset($_GET['image_name']))
 {
 	$image_name = $_GET['image_name'];
+    $target_folder = (isset($_GET['target_folder']) && $_GET['target_folder']!="") ? $_GET['target_folder'] : "../images/";
 	if(isset($_POST['upload_'.$image_name]) || isset($_FILES['upload_'.$image_name]))
 	{
 		$thumbnail = (empty($_FILES['upload_'.$image_name]) ? $_POST['upload_'.$image_name] : $_FILES['upload_'.$image_name]);
@@ -25,9 +26,9 @@ if(isset($_GET['image_name']))
 		//Upload thumbnail: response is already json format
 		$new_thumbnail_name = "";
 		if(empty($_FILES['upload_'.$image_name])) 
-			$new_thumbnail_name = copy_file($thumbnail, "../images/", $image_name_prefix); 
+			$new_thumbnail_name = copy_file($thumbnail, $target_folder, $image_name_prefix);
 		else
-			$new_thumbnail_name = upload_image($thumbnail, $image_name_prefix, "../images/");
+			$new_thumbnail_name = upload_image($thumbnail, $image_name_prefix, $target_folder);
 		
 		print $new_thumbnail_name;
 	}
