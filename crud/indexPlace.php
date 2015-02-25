@@ -96,7 +96,7 @@
                     dataType: 'json',
                     success: function (res) {
                         var count = res.TotalRecordCount;
-                        $('#alc-' + placeData.record.id +'').html('<b>' + count + '</b> Alcohols');
+                        $('#alc-' + placeData.record.id +'').html('<a href="javascript:void()"><b>' + count + '</b> Alcohols</a>');
                     }
                 });
 				//Open child table when user clicks the image
