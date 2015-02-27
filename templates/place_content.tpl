@@ -22,6 +22,13 @@
 </header>
 
 {literal}
+    <style>
+        #map-canvas {
+            height: 300px;
+            margin: 0px;
+            padding: 0px
+        }
+    </style>
 <script type="text/javascript">
 $( document ).ready(function() {
 
@@ -54,6 +61,70 @@ $('#rating_options').html("<div class='ink-alert basic error'>" + res.msg + "</d
 });
 
 </script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+    <script>
+        var map;
+        var infowindow;
+
+        function initialize() {
+            var res_lat;
+            var res_long;
+            var geocoder =  new google.maps.Geocoder();
+            geocoder.geocode( { 'address': '{/literal}{str_replace(array("\r", "\n"), "", $place.address)}, {$place.country}{literal}'}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) {
+                    res_lat = results[0].geometry.location.lat();
+                    res_long = results[0].geometry.location.lng();
+
+
+                    var pyrmont = new google.maps.LatLng(res_lat, res_long);
+
+                    map = new google.maps.Map(document.getElementById('map-canvas'), {
+                        center: pyrmont,
+                        zoom: 14
+                    });
+
+                    var request = {
+                        location: pyrmont,
+                        radius: 500,
+                        types: ['bar','restaurant']
+                    };
+                    infowindow = new google.maps.InfoWindow();
+                    var service = new google.maps.places.PlacesService(map);
+                    service.nearbySearch(request, callback);
+
+
+                } else {
+                    alert("Something got wrong " + status);
+                }
+            });
+        }
+
+        function callback(results, status) {
+            if (status == google.maps.places.PlacesServiceStatus.OK) {
+                for (var i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                }
+            }
+        }
+
+        function createMarker(place) {
+            var placeLoc = place.geometry.location;
+            var marker = new google.maps.Marker({
+                map: map,
+                position: place.geometry.location
+            });
+
+            google.maps.event.addListener(marker, 'click', function() {
+                infowindow.setContent(place.name);
+                infowindow.open(map, this);
+            });
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+
+
 {/literal}
 
 <div class="column-group gutters">
@@ -63,6 +134,8 @@ $('#rating_options').html("<div class='ink-alert basic error'>" + res.msg + "</d
             <figcaption class="dark over-bottom">{$place.name}</figcaption>
         </figure>
         <a href="checkin.php?place={$place.name_code}" class="ink-button green half-top-space">Check in</a>
+        <h5>Other bars nearby</h5>
+        <div class="small-100" id="map-canvas"></div>
     </div>
     <div class="xlarge-45 large-45 medium-60 small-100" style="margin: 0.5em">
         {dynamic}
@@ -89,6 +162,16 @@ $('#rating_options').html("<div class='ink-alert basic error'>" + res.msg + "</d
         {* Alcohols from this bar *}
         {if $place_alcohols|count > 0}
             <h4>Alcohols from {$place.name} </h4>
+            <nav class="ink-navigation">
+                <ul class="pagination pills medium white">
+                    <li class="active"><a href="#">All</a></li>
+                    <li><a href="#">Beers</a></li>
+                    <li><a href="#">Wines</a></li>
+                    <li><a href="#">Whiskys</a></li>
+                    <li><a href="#">Rums</a></li>
+                </ul>
+            </nav>
+
             <div class="column-group gutters">
                 {foreach $place_alcohols as $alcohol_item}
                     <div class="xlarge-20 large-20 medium-25 small-25">
