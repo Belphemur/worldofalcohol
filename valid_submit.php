@@ -78,12 +78,14 @@ if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['code']) A
 			$jTableResult = array();
 			$jTableResult["status"] = 1;
 			$jTableResult["txt"] = '<h4 class="align-center">Thank you '.$name.' for your contribution !</h4> 
+			<p class="align-center">Our team will soon review your submission and valid it !</p>';
+            /*$jTableResult["txt"] = '<h4 class="align-center">Thank you '.$name.' for your contribution !</h4>
 			<p class="align-center">We are currently looking for contributors like you in <b>'.$country_name.', '.$city.'.</b> <br><br>
-				Interested to become the <b>ambassador</b> of World of Alcohols in your area? Feel free to <a href=contact.php>Contact us !</a> 
+				Interested to become the <b>ambassador</b> of World of Alcohols in your area? Feel free to <a href=contact.php>Contact us !</a>
 				<br><br>
 				Happy Drinking <br>
-				World of Alcohols Team 
-			</p>';
+				World of Alcohols Team
+			</p>';*/
             //echo msg(1,json_encode($msg));
 			print json_encode($jTableResult);
 			
@@ -185,10 +187,10 @@ function send_promo($name, $email, $country, $alcohol_type, $ip)
 {
     $subject = "Your Alcohol submission";
     $message = "Hi ".$name.",\n";
-	$message .= "Thanks for submitting a $alcohol_type on WorldOfAlcohols. Our team will soon review your submission and valid it.\n";
-	$message .= "\n";
-	$message .= "We are currently giving a limited oppurtunity for contributors like you to become the ambassador of World of Alcohols in your area. If you are interested, please contact us via :\n";
-	$message .= "http://worldofalcohols.com/contact.php";
+	$message .= "Thanks for submitting a $alcohol_type on WorldOfAlcohols.Com Our team will soon review your submission and valid it.\n";
+	$message .= "Please check regularly alcohols from $country on our website to have the latest alcohols.\n";
+	//$message .= "We are currently giving a limited oppurtunity for contributors like you to become the ambassador of World of Alcohols in your area. If you are interested, please contact us via :\n";
+	//$message .= "http://worldofalcohols.com/contact.php";
 	$message .= "\n\n";
 	$message .= "Happy Drinking\n";
 	$message .= "World Of Alcohols Team\n";
