@@ -39,7 +39,13 @@ if (isset($_POST['name']) AND isset($_POST['email']) AND isset($_POST['code']) A
 		
 		$country_name = str_replace('-', ' ', $country);
 		$country_name = ucwords($country_name);
-		
+
+        // check if alcohol exist already
+        $name_code = format_name($name);
+        if($sql->numRows("SELECT a.name_code FROM alcohol a WHERE a.name_code_crc='".u_crc32($name_code)."' AND a.name_code='".$name_code."'")!=0) {
+            die(msg(0,"There is already an alcohol with this name !!!"));
+        }
+
         if(!isValidMail($email))
         {
             die(msg(0,"Your email address is not valid"));
