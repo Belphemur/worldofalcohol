@@ -92,8 +92,8 @@ $("#inline-country").select2({
 {dynamic}
 <div class="mainMsg" rel="{$nonce.req_alcByCountryCity_id}"><h1 class="top-margin-4 half-top-space align-center">Welcome to the world of alcohols ! </h1></div>
 {/dynamic}
-<div class="control-group all-33 small-100">
-	<div class="column-group quarter-gutters">
+<div class="control-group all-33 small-100 push-center">
+	<div class="column-group quarter-gutters push-center">
 		<div class="control all-65">
 			<select id="inline-country" name="country">
 				<option value="">Choose Country:</option> 
