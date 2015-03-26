@@ -1,6 +1,7 @@
 {assign var='site_link' value='http://worldofalcohols.com'}
 <script type="text/javascript" src="{$site_link}/js/contact.js"></script>
-
+<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 <header class="top-margin-5 hide-all show-large show-xlarge">     
 <nav class="ink-navigation">
 	<ul class="breadcrumbs red flat rounded shadowed">
@@ -62,6 +63,11 @@
     }
 }
 $( document ).ready(function() {
+
+$("#inline-alcohol_type").select2({
+    placeholder: "Select a country",
+    allowClear: true
+});
 
 $("#inline-image").change(function(){
 	readURL(this);
