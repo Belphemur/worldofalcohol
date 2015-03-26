@@ -64,8 +64,18 @@
 }
 $( document ).ready(function() {
 
+$("#inline-country").select2({
+    placeholder: "Select a country",
+    allowClear: true
+});
+
 $("#inline-alcohol_type").select2({
     placeholder: "Select alcohol type",
+    allowClear: true
+});
+
+$("#inline-alcohol_sub_type").select2({
+    placeholder: "Select alcohol sub type",
     allowClear: true
 });
 
