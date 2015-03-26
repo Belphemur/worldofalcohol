@@ -1,7 +1,8 @@
 {assign var='site_link' value='http://worldofalcohols.com'}
 <div class="top-margin-5 hide-all show-large show-xlarge"></div>
 <div class="top-margin-gap hide-all show-medium show-small show-tiny"></div>
-
+<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/css/select2.min.css" rel="stylesheet" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0-rc.2/js/select2.min.js"></script>
 
 <!-- Custom Styles for Interactive World Maps -->
 <style type="text/css">
@@ -81,6 +82,10 @@ $("#inline-country").change(function(){
 	}
 });
 
+$("#inline-country").select2({
+    placeholder: "Choose a Country",
+    allowClear: true
+});
 });	
 </script>
 {/literal}
