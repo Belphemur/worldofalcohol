@@ -65,7 +65,7 @@
 $( document ).ready(function() {
 
 $("#inline-alcohol_type").select2({
-    placeholder: "Select a country",
+    placeholder: "Select alcohol type",
     allowClear: true
 });
 
